@@ -55,6 +55,7 @@ https://kkmxjhrmlwxesrk4cdnmof.streamlit.app/
 
 ## Contact
 Created by **Khizar Ishtiaq**
-GitHub: https://github.com/1Khizar
-LinkedIn: https://linkedin.com/in/khizar-ishtiaq-716518315
+
+-GitHub: https://github.com/1Khizar
+-LinkedIn: https://linkedin.com/in/khizar-ishtiaq-716518315
 
