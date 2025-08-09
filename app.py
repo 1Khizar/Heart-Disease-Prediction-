@@ -10,7 +10,7 @@ st.set_page_config(page_title="Heart Disease Predictor", layout="wide")
 model = joblib.load('heart_disease_model.pkl')
 encoders = joblib.load('encoders.pkl')
 
-# Main CSS styling including button fix
+# Main CSS styling including header color fix
 st.markdown("""
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
@@ -133,7 +133,7 @@ st.markdown("""
             box-shadow: 0 5px 15px rgba(0,0,0,0.3) !important;
         }
         
-        /* Results container and other styles (unchanged, but included for completeness) */
+        /* Results container and other styles */
         .results-section {
             margin-top: 2rem !important;
             padding: 2.5rem !important;
@@ -201,10 +201,28 @@ st.markdown("""
             text-shadow: 0 0 5px rgba(255,255,255,0.6);
             letter-spacing: 0.05em;
         }
-        /* Hide Streamlit default menu, footer, header */
-        #MainMenu {visibility: hidden;}
-        footer {visibility: hidden;}
         
+        /* Hide default hamburger menu and footer */
+        #MainMenu {visibility: hidden !important;}
+        footer {visibility: hidden !important;}
+        
+        /* Style Streamlit header to match background gradient */
+        header, div[role="banner"] {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            color: white !important;
+            box-shadow: none !important;
+        }
+        
+        /* Style header text, icons and buttons to white */
+        header a, header button, header svg {
+            color: white !important;
+            fill: white !important;
+        }
+        
+        /* Remove bottom border under header */
+        .css-1d391kg {
+            border-bottom: none !important;
+        }
     </style>
 """, unsafe_allow_html=True)
 
@@ -232,8 +250,8 @@ with st.form("prediction_form"):
     
     oldpeak = st.slider("📉 Oldpeak (ST depression)", min_value=0.0, max_value=6.0, value=1.0, step=0.1)
     
-    submitted = st.form_submit_button("🔍 ANALYZE HEART DISEASE RISK")
-
+    
+    submitted = st.form_submit_button("🔍🔍 ANALYZE HEART DISEASE RISK 🔍🔍")
 
 if submitted:
     try:
